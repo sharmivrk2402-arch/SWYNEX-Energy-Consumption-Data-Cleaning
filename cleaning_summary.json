@@ -1,0 +1,13 @@
+{
+  "rows": 1000,
+  "columns": 11,
+  "missing_values_total": 0,
+  "duplicate_rows": 0,
+  "timestamp_parse_failures": 0,
+  "duplicate_timestamps": 0,
+  "weekday_mismatches_corrected": 879,
+  "negative_numeric_values_total": 0,
+  "cleaned_missing_values_total": 0,
+  "cleaned_duplicate_rows": 0,
+  "cleaned_weekday_mismatches": 0
+}
