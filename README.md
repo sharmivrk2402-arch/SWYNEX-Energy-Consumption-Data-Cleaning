@@ -1,51 +1,119 @@
-# Energy Consumption Dataset — Data Cleaning
 
-## Project overview
-This project prepares an energy-consumption dataset for analysis using Python and Pandas. It checks missing values, duplicate records, data types, and inconsistent values.
+# ⚡ Smart Energy Consumption Dashboard
 
-## Dataset
-- Records: 1,000
-- Columns: 11
-- Subject: Energy consumption and building/environmental characteristics
-- Original file: `dataset/raw_dataset.csv`
+## 📌 Project Overview
 
-## Data-quality findings
-| Check | Initial result | Action |
-|---|---:|---|
-| Missing values | 0 | No imputation required |
-| Duplicate full rows | 0 | No rows removed |
-| Timestamp data type | `object` (text) | Converted to datetime |
-| Timestamp parsing failures | 0 | All timestamps parsed |
-| Duplicate timestamps | 0 | No timestamp duplicates |
-| Day-of-week mismatches | 879 | Recalculated from Timestamp |
-| Negative numeric values | 0 | No correction required |
-| Categorical whitespace | 0 in inspected categories | Standardized text consistently |
+The Smart Energy Consumption Dashboard is an interactive data analytics project developed using Python and Streamlit. It helps analyze energy consumption patterns and understand how different factors such as temperature, humidity, occupancy, HVAC usage, and lighting usage influence energy consumption.
 
-## Cleaning performed
-1. Parsed `Timestamp` using the source format `%d-%m-%Y %H:%M`.
-2. Standardized categorical text fields by trimming whitespace and applying title case.
-3. Recalculated `DayOfWeek` from `Timestamp`. This was necessary because 879 of the original weekday labels did not agree with the date.
-4. Converted measurement columns to numeric types.
-5. Rechecked missing values, duplicate rows, weekday consistency, and negative numeric values.
+The dashboard provides interactive visualizations, statistical summaries, and filtering options to explore energy usage data.
 
-**Important assumption:** `Timestamp` is treated as the source of truth for the weekday. If the dataset owner intended `DayOfWeek` to represent a different business calendar, confirm that before using the corrected column.
+## 🎯 Objectives
 
-## Output
-- `dataset/raw_dataset.csv` — unchanged source data
-- `dataset/cleaned_dataset.csv` — cleaned data
-- `data_cleaning.ipynb` — reproducible cleaning notebook
+- Analyze overall energy consumption patterns.
+- Identify daily and weekly energy usage trends.
+- Understand the relationship between temperature and energy consumption.
+- Analyze the impact of occupancy on energy usage.
+- Monitor HVAC and lighting usage.
+- Explore renewable energy usage.
+- Present useful insights through interactive visualizations.
 
-## Tools
+## 🛠️ Technologies Used
+
 - Python
 - Pandas
-- NumPy
-- Jupyter Notebook / Google Colab
+- Streamlit
+- Plotly
 
-## How to run
-1. Download or clone this repository.
-2. Open `data_cleaning.ipynb` in Jupyter or upload it to Google Colab.
-3. Keep `raw_dataset.csv` inside the `dataset` folder, or upload the CSV when prompted.
-4. Run the notebook cells from top to bottom.
+## 📂 Dataset Description
 
-## Validation
-The cleaned output contains no missing values, no duplicate full rows, no weekday mismatches, and no negative numeric values in the inspected numeric columns.
+The project uses a cleaned energy consumption dataset containing 1,000 records and 11 columns.
+
+### Dataset Features
+
+| Column | Description |
+|---|---|
+| Timestamp | Date and time of the record |
+| Temperature | Recorded temperature |
+| Humidity | Humidity level |
+| SquareFootage | Building area |
+| Occupancy | Number of occupants |
+| HVACUsage | HVAC operating status |
+| LightingUsage | Lighting operating status |
+| RenewableEnergy | Renewable energy usage |
+| DayOfWeek | Day of the week |
+| Holiday | Holiday status |
+| EnergyConsumption | Energy consumed |
+
+## 📊 Dashboard Features
+
+1. Key Performance Indicators (KPIs)
+2. Daily Energy Consumption Trends
+3. Day-wise Energy Consumption Analysis
+4. HVAC Usage Distribution
+5. Lighting Usage Distribution
+6. Temperature vs Energy Consumption
+7. Occupancy vs Energy Consumption
+8. Renewable Energy Analysis
+9. Interactive Date and Category Filters
+10. Filtered Dataset Preview and Download
+
+## 🖥️ Dashboard Preview
+
+![Smart Energy Dashboard](screenshots/dashboard.png)
+
+## ⚙️ Installation and Setup
+
+### Step 1: Clone the Repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+### Step 2: Navigate to the Project Folder
+
+```bash
+cd Smart-Energy-Dashboard
+```
+
+### Step 3: Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 4: Run the Dashboard
+
+```bash
+streamlit run app.py
+```
+
+## 📁 Project Structure
+
+```text
+Smart-Energy-Dashboard/
+│
+├── app.py
+├── cleaned_energy_data.csv
+├── requirements.txt
+├── README.md
+│
+└── screenshots/
+    └── dashboard.png
+```
+
+## 💡 Expected Outcomes
+
+- Better understanding of energy consumption patterns.
+- Identification of factors associated with higher energy usage.
+- Interactive exploration of energy-related data.
+- Clear visualization of energy consumption trends.
+
+## 👩‍💻 Author
+
+**Sharmila R**
+
+B.Tech Artificial Intelligence and Data Science
+
+## 🏷️ Project Category
+
+Data Analytics | Python | Data Visualization | Streamlit
